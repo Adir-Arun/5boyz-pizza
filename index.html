@@ -226,6 +226,61 @@ footer .seo{font-size:.82rem;max-width:70ch}
 .mbar .when b{font-size:.98rem;white-space:nowrap}
 .mbar .btn{margin-inline-start:auto;padding:.75em 1.2em;font-size:1rem}
 
+
+/* ---------- accessibility & legal ---------- */
+.skip{position:absolute;inset-inline-start:12px;top:-60px;z-index:100;background:var(--flour);color:#16100c;font-weight:800;padding:.6em 1em;border-radius:10px;text-decoration:none}
+.skip:focus{top:calc(10px + env(safe-area-inset-top,0px))}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.a11y-btn{font:inherit;color:var(--flour);background:var(--char);border:1px solid var(--char-2);border-radius:999px;width:38px;height:38px;display:inline-grid;place-items:center;cursor:pointer;flex:none}
+.a11y-btn:hover{border-color:var(--ash)}
+.a11y-btn svg{width:22px;height:22px}
+.a11y-panel{position:fixed;z-index:60;top:calc(68px + env(safe-area-inset-top,0px));inset-inline-end:16px;width:min(320px,calc(100vw - 32px));background:var(--char);border:1px solid var(--char-2);border-radius:18px;padding:16px;box-shadow:0 24px 60px -20px rgba(0,0,0,.8);display:grid;gap:8px}
+.a11y-panel h2{font-family:var(--body);font-size:1.05rem;font-weight:800;line-height:1.3;margin:0 0 4px}
+.a11y-panel button{font:inherit;font-weight:600;font-size:.98rem;color:var(--flour);background:var(--night);border:1.5px solid var(--char-2);border-radius:12px;padding:.65em .9em;text-align:start;cursor:pointer;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.a11y-panel button[aria-pressed="true"]{border-color:var(--ember);background:color-mix(in srgb,var(--ember) 18%,var(--night))}
+.a11y-panel button[aria-pressed="true"]::after{content:"✓";color:var(--ember);font-weight:800}
+.a11y-panel .row{display:grid;grid-template-columns:1fr auto auto;gap:6px;align-items:center}
+.a11y-panel .row span{font-weight:600}
+.a11y-panel .row button{justify-content:center;padding:.5em .8em;min-width:44px}
+.a11y-panel .a11y-links{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.88rem;padding-top:4px}
+.a11y-panel .a11y-links button{background:none;border:0;padding:0;color:var(--ember);text-decoration:underline;font-size:.88rem}
+html.a11y-t1{font-size:112.5%} html.a11y-t2{font-size:125%} html.a11y-t3{font-size:140%}
+html.a11y-contrast{--night:#000;--char:#0b0b0b;--char-2:#9a8a78;--flour:#fff;--ash:#efe7dc;--ember:#ff9a5c;--basil:#b6e08a}
+html.a11y-contrast .hero::before,html.a11y-contrast .final::before{display:none}
+html.a11y-contrast .learn-photo figcaption,html.a11y-contrast .vid figcaption{background:#000}
+html.a11y-links a{text-decoration:underline!important;text-underline-offset:3px}
+html.a11y-links a:not(.btn){color:var(--ember)!important}
+html.a11y-font{--display:Arial,"Arial Hebrew",sans-serif;--body:Arial,"Arial Hebrew",sans-serif}
+html.a11y-font h1,html.a11y-font h2,html.a11y-font h3{letter-spacing:0;line-height:1.15}
+html.a11y-still *,html.a11y-still *::before,html.a11y-still *::after{animation:none!important;transition:none!important}
+html.a11y-still{scroll-behavior:auto}
+.vid-toggle{position:absolute;inset-inline-end:12px;bottom:12px;width:44px;height:44px;border-radius:50%;border:0;background:rgba(22,16,12,.78);color:#fff;display:grid;place-items:center;cursor:pointer}
+.vid-toggle svg{width:18px;height:18px}
+.strip:hover .row,.strip.paused .row{animation-play-state:paused}
+.strip-toggle{position:absolute;inset-inline-end:10px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;border:1px solid var(--char-2);background:var(--night);color:var(--flour);display:grid;place-items:center;cursor:pointer;z-index:2}
+.strip-toggle svg{width:14px;height:14px}
+.strip{position:relative}
+.age-note{margin-top:12px;color:var(--ash);font-size:.92rem}
+.legal-links{display:flex;flex-wrap:wrap;gap:6px 18px}
+.legal-links button{font:inherit;font-size:.92rem;color:var(--ash);background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.legal-links button:hover{color:var(--flour)}
+footer .wrap{display:grid;gap:14px;justify-content:stretch}
+footer .row1{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}
+dialog.legal{width:min(760px,calc(100vw - 24px));max-height:calc(100dvh - 32px);padding:0;border:1px solid var(--char-2);border-radius:20px;background:var(--char);color:var(--flour)}
+dialog.legal::backdrop{background:rgba(0,0,0,.72);backdrop-filter:blur(3px)}
+.legal-inner{position:relative;padding:28px clamp(18px,4vw,40px) 36px;overflow:auto;max-height:calc(100dvh - 34px)}
+.legal-inner h2{font-size:clamp(2.2rem,1.8rem + 1.5vw,3rem);margin:0 0 4px;padding-inline-end:48px}
+[lang="en"] .legal-inner h2{font-family:"Oswald","Assistant",sans-serif;font-weight:600}
+.legal-inner h3{font-family:var(--body);font-size:1.15rem;font-weight:800;line-height:1.35;margin:22px 0 6px;color:var(--ember)}
+.legal-inner p,.legal-inner li{color:var(--flour);line-height:1.7;max-width:68ch}
+.legal-inner ul{margin:0;padding-inline-start:1.2em;display:grid;gap:6px}
+.legal-inner b{font-weight:800}
+.legal-date{color:var(--ash)!important;font-size:.92rem;margin-bottom:10px!important}
+.legal-close{position:sticky;top:0;float:inline-end;margin-inline-start:12px;width:40px;height:40px;border-radius:50%;border:1px solid var(--char-2);background:var(--night);color:var(--flour);font-size:1.1rem;cursor:pointer;z-index:2}
+.legal-close:hover{border-color:var(--ash)}
+
+.inline-link{font:inherit;color:var(--ember);background:none;border:0;padding:0;text-decoration:underline;cursor:pointer}
+.details>.facts-col{display:grid;align-content:start}
 /* responsive */
 @media (max-width:1040px){ .nav{display:none} }
 @media (max-width:980px){
@@ -260,6 +315,7 @@ footer .seo{font-size:.82rem;max-width:70ch}
 </style>
 
 <div class="page" id="page" lang="he" dir="rtl">
+<a class="skip" href="#main-content" data-i18n="skip">דלג לתוכן הראשי</a>
 
 <header class="topbar">
   <div class="wrap">
@@ -270,6 +326,9 @@ footer .seo{font-size:.82rem;max-width:70ch}
       <a href="#details" data-i18n="nav3">פרטים</a>
       <a href="#faq" data-i18n="nav4">שאלות</a>
     </nav>
+    <button class="a11y-btn" id="a11y-btn" type="button" aria-expanded="false" aria-controls="a11y-panel" aria-label="תפריט נגישות">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="M19 8.5h-5v12h-2v-6h-0.01H10v6H8v-12H3v-2h16v2Z"/></svg>
+    </button>
     <button class="lang" id="lang-btn" type="button" aria-label="Switch to English">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"/></svg>
       <span id="lang-label">English</span>
@@ -278,7 +337,18 @@ footer .seo{font-size:.82rem;max-width:70ch}
   </div>
 </header>
 
-<main id="top">
+
+<div class="a11y-panel" id="a11y-panel" role="region" aria-labelledby="a11y-h" hidden>
+  <h2 id="a11y-h" data-i18n="a11yH">תפריט נגישות</h2>
+  <div class="row"><span data-i18n="a11yText">גודל טקסט</span><button type="button" id="a11y-minus" aria-label="הקטנת טקסט">A−</button><button type="button" id="a11y-plus" aria-label="הגדלת טקסט">A+</button></div>
+  <button type="button" data-a11y="contrast" aria-pressed="false" data-i18n="a11yContrast">ניגודיות גבוהה</button>
+  <button type="button" data-a11y="links" aria-pressed="false" data-i18n="a11yLinks">הדגשת קישורים</button>
+  <button type="button" data-a11y="font" aria-pressed="false" data-i18n="a11yFont">גופן קריא</button>
+  <button type="button" data-a11y="still" aria-pressed="false" data-i18n="a11yStill">עצירת אנימציות</button>
+  <button type="button" id="a11y-reset" data-i18n="a11yReset">איפוס הגדרות</button>
+  <div class="a11y-links"><button type="button" data-open="dlg-access" data-i18n="lgAccess">הצהרת נגישות</button></div>
+</div>
+<main id="top"><span id="main-content" tabindex="-1"></span>
 
 <section class="hero" aria-labelledby="h1">
   <div class="wrap hero-grid">
@@ -308,16 +378,18 @@ footer .seo{font-size:.82rem;max-width:70ch}
   </div>
 </section>
 
-<div class="strip" aria-hidden="true">
-  <div class="row" id="strip-row"></div>
+<div class="strip" id="strip">
+  <div class="row" id="strip-row" aria-hidden="true"></div>
+  <button class="strip-toggle" id="strip-toggle" type="button" aria-label="עצירת הטקסט הנע"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button>
 </div>
 
 <section id="evening" aria-labelledby="evening-h">
   <div class="wrap evening-grid">
     <div class="evening-media">
       <figure class="vid">
-        <video src="img/oven_loop.mp4" poster="img/oven_loop_poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="פיצה נאפית בטאבון בסדנה"></video>
+        <video id="hero-vid" src="img/oven_loop.mp4" poster="img/oven_loop_poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="פיצה נאפית בטאבון בסדנה"></video>
         <figcaption data-i18n="vidCap">בטאבון, עכשיו</figcaption>
+        <button class="vid-toggle" id="vid-toggle" type="button" aria-label="השהיית הסרטון"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button>
       </figure>
       <figure><img src="img/dough_table.jpg" alt="שולחן סדנת הבצק: כדורי בצק, קמח, עגבניות ובזיליקום" loading="lazy" width="900" height="820"></figure>
       <figure><img src="img/chef_peel.jpg" alt="השף מציג פיצה על מרית לפני האפייה" loading="lazy" width="800" height="1217"></figure>
@@ -413,6 +485,7 @@ footer .seo{font-size:.82rem;max-width:70ch}
       <div><span class="k">3</span><b data-i18n="h3b">עולים לגג</b><span data-i18n="h3s">ב־19:00 הטאבון כבר חם והיין פתוח.</span></div>
     </div>
     <div class="details">
+      <div class="facts-col">
       <dl class="facts">
         <div><dt data-i18n="f1t">מתי</dt><dd><span data-i18n="f1d">כל יום רביעי</span><small>19:00–22:00</small></dd></div>
         <div><dt data-i18n="f2t">איפה</dt><dd><span data-i18n="f2d">גג בתל אביב</span><small data-i18n="f2s">הכתובת המדויקת נשלחת בוואטסאפ</small></dd></div>
@@ -421,6 +494,8 @@ footer .seo{font-size:.82rem;max-width:70ch}
         <div><dt data-i18n="f5t">כולל</dt><dd><span data-i18n="f5d">הפיצה שאתם מכינים</span><small data-i18n="f5s">ויין לאורך הערב</small></dd></div>
         <div><dt data-i18n="f6t">ניסיון</dt><dd><span data-i18n="f6d">לא צריך</span><small data-i18n="f6s">מתאים גם למי שמעולם לא נגע בבצק</small></dd></div>
       </dl>
+      <p class="age-note" data-i18n="ageNote">היין מוגש למשתתפים בני 18 ומעלה בלבד. ההרשמה כפופה <button type="button" class="inline-link" data-open="dlg-terms">לתקנון ולמדיניות הביטולים</button>.</p>
+      </div>
       <div class="book">
         <img src="img/chef_fire.jpg" alt="" loading="lazy">
         <h3 data-i18n="bH">שריינו מקום לרביעי הקרוב</h3>
@@ -461,10 +536,233 @@ footer .seo{font-size:.82rem;max-width:70ch}
 
 <footer>
   <div class="wrap">
-    <span data-i18n="foot">© 5 boyz pizza · סדנת פיצה וטאבון על הגג, תל אביב</span>
-    <span class="seo" data-i18n="footSeo">סדנת פיצה בתל אביב · סדנת טאבון · סדנת בצק · סדנת פיצה נפוליטנית · ערב גיבוש · פעילות לדייט</span>
+    <nav class="legal-links" aria-label="מידע משפטי">
+      <button type="button" data-open="dlg-access" data-i18n="lgAccess">הצהרת נגישות</button>
+      <button type="button" data-open="dlg-privacy" data-i18n="lgPrivacy">מדיניות פרטיות</button>
+      <button type="button" data-open="dlg-terms" data-i18n="lgTerms">תקנון ומדיניות ביטולים</button>
+    </nav>
+    <div class="row1">
+      <span data-i18n="foot">© 5 boyz pizza · סדנת פיצה וטאבון על הגג, תל אביב</span>
+      <span class="seo" data-i18n="footSeo">סדנת פיצה בתל אביב · סדנת טאבון · סדנת בצק · סדנת פיצה נפוליטנית · ערב גיבוש · פעילות לדייט</span>
+    </div>
   </div>
 </footer>
+<!-- ===== Accessibility statement ===== -->
+<dialog class="legal" id="dlg-access" aria-labelledby="dlg-access-h">
+  <div class="legal-inner">
+    <button class="legal-close" type="button" data-close aria-label="סגירה">✕</button>
+    <div data-lang="he">
+      <h2 id="dlg-access-h">הצהרת נגישות</h2>
+      <p class="legal-date">עודכן לאחרונה: 13 באוקטובר 2026</p>
+      <p>ב־5 boyz pizza אנחנו רוצים שכל מי שרוצה ללמוד להכין פיצה יוכל לעשות את זה, כולל אנשים עם מוגבלות. האתר נבנה מתוך כוונה לעמוד בדרישות תקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג־2013, ובתקן הישראלי ת"י 5568, המבוסס על הנחיות WCAG 2.0 ברמה AA.</p>
+      <h3>מה עשינו באתר</h3>
+      <ul>
+        <li>מבנה כותרות היררכי וסימון תקין של אזורי העמוד (ניווט, תוכן ראשי, כותרת תחתונה).</li>
+        <li>קישור "דלג לתוכן הראשי" בתחילת העמוד, ואפשרות לנווט בכל האתר באמצעות המקלדת בלבד, עם סימון פוקוס ברור.</li>
+        <li>טקסט חלופי לכל התמונות שמעבירות מידע. תמונות דקורטיביות מסומנות כך שקוראי מסך מדלגים עליהן.</li>
+        <li>ניגודיות צבעים שנבדקה בין טקסט לרקע, ותמיכה בהגדלת טקסט עד 200% בלי אובדן תוכן.</li>
+        <li>תפריט נגישות (הכפתור עם סמל הנגישות בראש העמוד): הגדלת טקסט, ניגודיות גבוהה, הדגשת קישורים, גופן קריא ועצירת אנימציות.</li>
+        <li>אפשרות לעצור את הסרטון ואת הטקסט הנע. כשבמכשיר מוגדר "הפחתת תנועה", כל האנימציות נעצרות אוטומטית.</li>
+        <li>תאימות לקוראי מסך נפוצים ולתצוגה בטלפון, בטאבלט ובמחשב, בעברית ובאנגלית.</li>
+      </ul>
+      <h3>מגבלות ידועות</h3>
+      <ul>
+        <li>ההרשמה מתבצעת דרך וואטסאפ, שירות של צד שלישי שרמת הנגישות שלו אינה בשליטתנו. אם וואטסאפ לא נוח לכם, אפשר להתקשר אלינו בטלפון.</li>
+        <li>הסרטון באתר הוא קטע אווירה קצר ללא קול וללא מידע מדובר, ולכן אין לו כתוביות.</li>
+      </ul>
+      <p>אנחנו ממשיכים לבדוק ולשפר את האתר. אם נתקלתם בבעיה, נשמח לשמוע ולתקן.</p>
+      <h3>נגישות הסדנה עצמה</h3>
+      <p>הסדנה מתקיימת על גג בתל אביב. לפני ההרשמה, פנו אלינו כדי לברר את הסדרי הנגישות במקום (גישה למעלית, שירותים נגישים, ישיבה ליד עמדת העבודה) ואת ההתאמות שנוכל לעשות עבורכם. נשמח להתאים את הסדנה ככל האפשר.</p>
+      <h3>רכז/ת נגישות ויצירת קשר</h3>
+      <p>לפניות בנושא נגישות: טלפון ווואטסאפ <bdi dir="ltr">050-408-8234</bdi>. נשתדל לחזור אליכם בהקדם, ולכל המאוחר תוך 5 ימי עבודה.</p>
+      <p>כשאתם פונים אלינו, ציינו בבקשה את תיאור הבעיה, באיזה עמוד או רכיב היא הופיעה, ובאיזה דפדפן וטכנולוגיה מסייעת השתמשתם.</p>
+    </div>
+    <div data-lang="en" hidden>
+      <h2>Accessibility statement</h2>
+      <p class="legal-date">Last updated: October 13, 2026</p>
+      <p>At 5 boyz pizza we want everyone who wants to learn to make pizza to be able to do it, including people with disabilities. This website was built with the aim of meeting the Israeli Equal Rights for Persons with Disabilities (Service Accessibility Adjustments) Regulations, 2013, and Israeli Standard IS 5568, which is based on WCAG 2.0 level AA.</p>
+      <h3>What we did</h3>
+      <ul>
+        <li>A clear heading structure and proper page landmarks (navigation, main content, footer).</li>
+        <li>A "Skip to main content" link, full keyboard navigation and a clearly visible focus indicator.</li>
+        <li>Text alternatives for every meaningful image. Decorative images are hidden from screen readers.</li>
+        <li>Checked colour contrast, and text that can be enlarged to 200% without losing content.</li>
+        <li>An accessibility menu (the accessibility icon at the top of the page): larger text, high contrast, highlighted links, a readable font and a stop-animations option.</li>
+        <li>Controls to pause the video and the moving text. If your device is set to reduce motion, all animations stop automatically.</li>
+        <li>Works with common screen readers and on phones, tablets and computers, in Hebrew and English.</li>
+      </ul>
+      <h3>Known limitations</h3>
+      <ul>
+        <li>Booking is done through WhatsApp, a third-party service whose accessibility we don't control. If WhatsApp isn't convenient, you can call us.</li>
+        <li>The video is a short silent mood clip with no spoken information, so it has no captions.</li>
+      </ul>
+      <h3>Accessibility of the workshop venue</h3>
+      <p>The workshop takes place on a rooftop in Tel Aviv. Before booking, please contact us to check the on-site arrangements (lift access, accessible restroom, seating at the workstation) and what we can adjust for you.</p>
+      <h3>Accessibility contact</h3>
+      <p>Phone and WhatsApp: <bdi dir="ltr">+972 50-408-8234</bdi>. We'll reply as soon as we can, and within 5 business days at the latest. Please describe the problem, the page or element where it happened, and the browser and assistive technology you used.</p>
+    </div>
+  </div>
+</dialog>
+
+<!-- ===== Privacy policy ===== -->
+<dialog class="legal" id="dlg-privacy" aria-labelledby="dlg-privacy-h">
+  <div class="legal-inner">
+    <button class="legal-close" type="button" data-close aria-label="סגירה">✕</button>
+    <div data-lang="he">
+      <h2 id="dlg-privacy-h">מדיניות פרטיות</h2>
+      <p class="legal-date">עודכן לאחרונה: 13 באוקטובר 2026</p>
+      <p>הפרטיות שלכם חשובה לנו. המדיניות הזו מסבירה איזה מידע אנחנו אוספים, למה, ומה הזכויות שלכם, בהתאם לחוק הגנת הפרטיות, התשמ"א־1981, ולתקנות שהותקנו מכוחו. הנוסח כתוב בלשון רבים ופונה לכל המגדרים.</p>
+      <h3>1. מי אנחנו</h3>
+      <p>האתר מופעל על ידי 5 boyz pizza ("אנחנו"). ליצירת קשר בכל נושא של פרטיות: טלפון ווואטסאפ <bdi dir="ltr">050-408-8234</bdi>.</p>
+      <h3>2. איזה מידע אנחנו אוספים</h3>
+      <ul>
+        <li><b>מידע שאתם שולחים לנו:</b> כשאתם פונים בוואטסאפ או בטלפון, אנחנו מקבלים את השם ומספר הטלפון שלכם, את תוכן ההודעה ואת התאריך שבחרתם.</li>
+        <li><b>מידע לצורך הסדנה:</b> מספר המשתתפים, ואם תבחרו לשתף, גם רגישויות או העדפות תזונתיות. מידע על אלרגיות נאסף רק כדי לשמור על הבטיחות שלכם בסדנה ולא ישמש לשום מטרה אחרת.</li>
+        <li><b>תשלום:</b> אם התשלום מתבצע דרך אפליקציה או ספק סליקה, פרטי התשלום מעובדים אצל ספק התשלום ולא נשמרים אצלנו.</li>
+        <li><b>שימוש באתר:</b> האתר לא משתמש בעוגיות פרסום או מעקב ולא בכלי אנליטיקה. נשמרות רק העדפות השפה והנגישות שבחרתם, והן נשמרות בדפדפן שלכם בלבד (Local Storage). ספק האחסון שלנו רושם יומני גישה טכניים, כמו כתובת IP וסוג דפדפן, לצורכי אבטחה ותפעול. הגופנים באתר נטענים מ-Google Fonts, ולכן כתובת ה-IP שלכם נחשפת ל-Google לצורך הטעינה.</li>
+      </ul>
+      <h3>3. למה אנחנו משתמשים במידע</h3>
+      <ul>
+        <li>כדי לענות לפניות, לשריין מקום, לתאם את הסדנה ולעדכן אתכם על שינויים בה.</li>
+        <li>כדי לשמור על הבטיחות שלכם, למשל במקרה של אלרגיות.</li>
+        <li>כדי לעמוד בחובות לפי דין, כמו הנהלת חשבונות.</li>
+        <li>דיוור שיווקי (מבצעים ותאריכים חדשים) נשלח רק למי שנתן לכך הסכמה מפורשת, בהתאם לסעיף 30א לחוק התקשורת. אפשר לבקש להפסיק בכל עת בהודעה פשוטה.</li>
+      </ul>
+      <h3>4. עם מי המידע משותף</h3>
+      <p>אנחנו לא מוכרים ולא משכירים מידע אישי. המידע עובר רק לספקים שעוזרים לנו להפעיל את השירות, ורק במידה הנדרשת: WhatsApp (Meta) להתכתבות, ספק התשלום, ו-Vercel לאחסון האתר. לחלק מהספקים יש שרתים מחוץ לישראל. המידע יימסר גם לרשויות אם יידרש לפי דין.</p>
+      <h3>5. צילומים בסדנה</h3>
+      <p>לפעמים אנחנו מצלמים בסדנה תמונות וסרטונים לרשתות החברתיות ולאתר. מי שלא רוצה להופיע מוזמן לומר לנו לפני הסדנה או במהלכה, ונדאג שלא יצולם. אם כבר פורסם צילום שבו אתם מופיעים, נסיר אותו לפי בקשה.</p>
+      <h3>6. כמה זמן המידע נשמר</h3>
+      <p>אנחנו שומרים את המידע רק כל עוד הוא נדרש למטרות שלמעלה, או כנדרש לפי דין (למשל רישומים חשבונאיים). מידע על אלרגיות נמחק אחרי הסדנה.</p>
+      <h3>7. אבטחת מידע</h3>
+      <p>אנחנו נוקטים אמצעים סבירים להגנה על המידע ומגבילים את הגישה אליו רק למי שצריך אותו לצורך הסדנה. עם זאת, אין שיטת העברה או שמירה של מידע שמוגנת לחלוטין.</p>
+      <h3>8. הזכויות שלכם</h3>
+      <p>לפי חוק הגנת הפרטיות, אתם רשאים לעיין במידע שנשמר עליכם, לבקש לתקן אותו אם הוא שגוי, ולבקש למחוק אותו כשאין חובה חוקית לשמור אותו. לבקשה, שלחו הודעה לטלפון שלמעלה. נענה תוך 30 יום.</p>
+      <h3>9. קטינים</h3>
+      <p>השירות מיועד לבגירים. קטינים יכולים להשתתף רק בליווי ובאישור של הורה או אפוטרופוס, ובכל מקרה לא יוגש להם אלכוהול.</p>
+      <h3>10. שינויים במדיניות</h3>
+      <p>אנחנו עשויים לעדכן את המדיניות מעת לעת, והגרסה העדכנית תמיד תופיע כאן. אם נוסיף בעתיד כלי מדידה או פרסום (למשל פיקסל של רשתות חברתיות), נעדכן את המדיניות ונבקש את הסכמתכם לפני הפעלתם.</p>
+    </div>
+    <div data-lang="en" hidden>
+      <h2>Privacy policy</h2>
+      <p class="legal-date">Last updated: October 13, 2026</p>
+      <p>Your privacy matters to us. This policy explains what we collect, why, and your rights, in line with the Israeli Protection of Privacy Law, 1981, and its regulations.</p>
+      <h3>1. Who we are</h3>
+      <p>This site is operated by 5 boyz pizza ("we"). For any privacy matter: phone or WhatsApp <bdi dir="ltr">+972 50-408-8234</bdi>.</p>
+      <h3>2. What we collect</h3>
+      <ul>
+        <li><b>What you send us:</b> when you contact us on WhatsApp or by phone, we receive your name, phone number, your message and the date you chose.</li>
+        <li><b>Workshop details:</b> number of participants and, if you choose to share them, dietary needs or allergies. Allergy information is used only to keep you safe at the workshop.</li>
+        <li><b>Payment:</b> if you pay through an app or a payment provider, your payment details are processed by that provider and not stored by us.</li>
+        <li><b>Using the site:</b> no advertising or tracking cookies and no analytics. Only your language and accessibility preferences are saved, in your own browser (local storage). Our hosting provider keeps technical access logs (such as IP address and browser type) for security and operations. Fonts load from Google Fonts, so your IP address is shared with Google to deliver them.</li>
+      </ul>
+      <h3>3. How we use it</h3>
+      <ul>
+        <li>To answer you, book your spot, run the workshop and tell you about changes.</li>
+        <li>To keep you safe, for example with allergies.</li>
+        <li>To meet legal obligations such as bookkeeping.</li>
+        <li>Marketing messages are sent only with your explicit consent, as required by section 30A of the Communications Law, and you can opt out at any time.</li>
+      </ul>
+      <h3>4. Sharing</h3>
+      <p>We never sell or rent personal information. It is shared only as needed with providers that help us run the service: WhatsApp (Meta) for messaging, the payment provider, and Vercel for hosting. Some of them have servers outside Israel. We will also disclose information when required by law.</p>
+      <h3>5. Photos at the workshop</h3>
+      <p>We sometimes take photos and videos at the workshop for social media and this site. If you'd rather not appear, tell us before or during the workshop. If a photo of you was already published, we'll remove it on request.</p>
+      <h3>6. Retention and security</h3>
+      <p>We keep information only as long as needed for these purposes or as required by law. Allergy information is deleted after the workshop. We take reasonable measures to protect it and limit access to those who need it, though no method is completely secure.</p>
+      <h3>7. Your rights</h3>
+      <p>You may review the information we hold about you, ask us to correct it, and ask us to delete it where we're not legally required to keep it. Send us a message at the number above and we'll reply within 30 days.</p>
+      <h3>8. Minors</h3>
+      <p>The service is intended for adults. Minors may take part only with a parent's or guardian's consent and supervision, and are never served alcohol.</p>
+      <h3>9. Changes</h3>
+      <p>We may update this policy, and the current version will always be here. If we ever add measurement or advertising tools (such as a social media pixel), we will update this policy and ask for your consent first.</p>
+    </div>
+  </div>
+</dialog>
+
+<!-- ===== Terms ===== -->
+<dialog class="legal" id="dlg-terms" aria-labelledby="dlg-terms-h">
+  <div class="legal-inner">
+    <button class="legal-close" type="button" data-close aria-label="סגירה">✕</button>
+    <div data-lang="he">
+      <h2 id="dlg-terms-h">תקנון ותנאי השתתפות</h2>
+      <p class="legal-date">עודכן לאחרונה: 13 באוקטובר 2026</p>
+      <p>התנאים האלה חלים על השימוש באתר ועל ההשתתפות בסדנאות של 5 boyz pizza. הרשמה לסדנה מהווה הסכמה להם. הנוסח כתוב בלשון רבים ופונה לכל המגדרים.</p>
+      <h3>1. הרשמה ותשלום</h3>
+      <ul>
+        <li>ההרשמה מתבצעת בפנייה בוואטסאפ או בטלפון. המחיר ופרטי הסדנה נמסרים לפני ההרשמה.</li>
+        <li>המקום בסדנה נשמר רק אחרי שקיבלתם מאיתנו אישור ושולם התשלום כפי שסוכם.</li>
+        <li>המקומות בכל סדנה מוגבלים, וההרשמה היא לפי סדר הפניות.</li>
+      </ul>
+      <h3>2. ביטול על ידי המשתתף</h3>
+      <ul>
+        <li>ביטול עסקה שנעשתה מרחוק (בוואטסאפ, בטלפון או באינטרנט) כפוף לחוק הגנת הצרכן, התשמ"א־1981, ולתקנות הגנת הצרכן (ביטול עסקה), התשע"א־2010.</li>
+        <li>לפי החוק, אפשר לבטל תוך 14 יום מיום ביצוע העסקה, בתנאי שהביטול נעשה לפחות 7 ימים, שאינם ימי מנוחה, לפני מועד הסדנה. במקרה כזה יוחזר התשלום בניכוי דמי ביטול בשיעור של 5% מהמחיר או 100 ₪, הנמוך מביניהם.</li>
+        <li>אחרי המועדים האלה אין חובה להחזיר את התשלום. ובכל זאת, אפשר לפנות אלינו ונבדוק העברה לתאריך אחר או החלפה במשתתף אחר, בכפוף למקום פנוי.</li>
+        <li>הודעת ביטול נשלחת בוואטסאפ או בטלפון.</li>
+      </ul>
+      <h3>3. ביטול או שינוי על ידינו</h3>
+      <p>הסדנה מתקיימת על גג פתוח. אנחנו רשאים לדחות או לבטל סדנה בגלל מזג אוויר, מיעוט נרשמים, מצב ביטחוני או נסיבות שאינן בשליטתנו. במקרה כזה נודיע לכם בהקדם, ותוכלו לבחור בין העברה לתאריך אחר לבין החזר מלא של מה ששילמתם.</p>
+      <h3>4. בריאות, אלרגיות ובטיחות</h3>
+      <ul>
+        <li>בסדנה עובדים עם קמח חיטה (גלוטן), מוצרי חלב ומרכיבים נוספים שעלולים לגרום לאלרגיות. יש לעדכן אותנו מראש על כל אלרגיה או רגישות. איננו יכולים להבטיח סביבה נקייה לחלוטין מאלרגנים.</li>
+        <li>הטאבון ומשטחי העבודה מגיעים לטמפרטורות גבוהות מאוד. יש לפעול לפי ההנחיות של מנחי הסדנה ולא לגעת בציוד בלי אישור.</li>
+        <li>ההשתתפות היא על אחריות המשתתפים ובכפוף למצבם הבריאותי. אנו רשאים למנוע השתתפות ממי שמתנהג באופן שמסכן אותו או אחרים.</li>
+        <li>אנחנו לא אחראים לאובדן או לנזק לחפצים אישיים שהובאו לסדנה.</li>
+      </ul>
+      <h3>5. אלכוהול</h3>
+      <p>יין מוגש רק למשתתפים בני 18 ומעלה, ואנחנו רשאים לבקש תעודה מזהה. אנחנו רשאים להפסיק הגשת אלכוהול לכל משתתף לפי שיקול דעתנו. שתו באחריות, ואל תנהגו אחרי שתיית אלכוהול.</p>
+      <h3>6. צילום</h3>
+      <p>במהלך הסדנה עשויים להתבצע צילומים לשימוש ברשתות החברתיות ובאתר. מי שלא מעוניין להופיע מתבקש לומר לנו, ונכבד את הבקשה. פרטים נוספים במדיניות הפרטיות.</p>
+      <h3>7. קניין רוחני</h3>
+      <p>התכנים באתר ובסדנה, כולל טקסטים, תמונות, סרטונים ומתכונים, שייכים ל-5 boyz pizza או למי שהעניק לנו רישיון להשתמש בהם. אין להעתיק אותם או להשתמש בהם למטרות מסחריות בלי אישור בכתב. מתכונים שקיבלתם בסדנה מותר כמובן להכין בבית ולשתף עם חברים.</p>
+      <h3>8. אחריות</h3>
+      <p>המידע באתר נמסר כשירות ועשוי להשתנות. התמונות באתר נועדו להמחשה בלבד. במידה המרבית שהדין מתיר, האחריות שלנו מוגבלת לסכום ששילמתם עבור הסדנה. אין באמור כדי לגרוע מזכויות שאינן ניתנות להתניה לפי דין.</p>
+      <h3>9. דין וסמכות שיפוט</h3>
+      <p>על תנאים אלה יחולו דיני מדינת ישראל. סמכות השיפוט הבלעדית נתונה לבתי המשפט המוסמכים בתל אביב־יפו.</p>
+      <h3>10. שינויים ויצירת קשר</h3>
+      <p>אנחנו רשאים לעדכן את התנאים מעת לעת. הנוסח המחייב הוא זה שהיה בתוקף ביום ההרשמה. לשאלות: טלפון ווואטסאפ <bdi dir="ltr">050-408-8234</bdi>.</p>
+    </div>
+    <div data-lang="en" hidden>
+      <h2>Terms of participation</h2>
+      <p class="legal-date">Last updated: October 13, 2026</p>
+      <p>These terms apply to the use of this site and to taking part in 5 boyz pizza workshops. Booking a workshop means you accept them. The Hebrew version is the binding one.</p>
+      <h3>1. Booking and payment</h3>
+      <ul>
+        <li>Booking is made by WhatsApp or phone. The price and details are given before you book.</li>
+        <li>Your spot is held only after we confirm it and payment is made as agreed.</li>
+        <li>Spots are limited and allocated in order of booking.</li>
+      </ul>
+      <h3>2. Cancellation by you</h3>
+      <ul>
+        <li>Cancelling a remote purchase (WhatsApp, phone or online) is governed by the Israeli Consumer Protection Law, 1981, and the Consumer Protection (Cancellation of Transaction) Regulations, 2010.</li>
+        <li>Under the law, you may cancel within 14 days of the purchase, provided you cancel at least 7 days (excluding rest days) before the workshop. You'll be refunded minus a cancellation fee of 5% of the price or ILS 100, whichever is lower.</li>
+        <li>After that there is no refund obligation, but contact us and we'll check moving you to another date or sending someone in your place, subject to availability.</li>
+      </ul>
+      <h3>3. Cancellation or changes by us</h3>
+      <p>The workshop takes place on an open rooftop. We may postpone or cancel because of weather, too few participants, the security situation or circumstances beyond our control. We'll let you know as soon as possible, and you can choose another date or a full refund.</p>
+      <h3>4. Health, allergies and safety</h3>
+      <ul>
+        <li>We work with wheat flour (gluten), dairy and other ingredients that may cause allergies. Please tell us about any allergy in advance. We can't guarantee an allergen-free environment.</li>
+        <li>The taboon and work surfaces get extremely hot. Follow the instructors' guidance and don't touch equipment without permission.</li>
+        <li>You take part at your own responsibility and according to your health. We may stop anyone whose behaviour endangers themselves or others.</li>
+        <li>We are not responsible for loss of or damage to personal belongings.</li>
+      </ul>
+      <h3>5. Alcohol</h3>
+      <p>Wine is served only to participants aged 18 and over, and we may ask for ID. We may stop serving alcohol to anyone at our discretion. Drink responsibly and don't drive after drinking.</p>
+      <h3>6. Photography</h3>
+      <p>Photos and videos may be taken during the workshop for social media and this site. If you'd rather not appear, tell us and we'll respect it.</p>
+      <h3>7. Intellectual property</h3>
+      <p>The content of this site and the workshop, including texts, photos, videos and recipes, belongs to 5 boyz pizza or its licensors and may not be copied or used commercially without written permission. You're of course welcome to make the recipes at home.</p>
+      <h3>8. Liability</h3>
+      <p>Information on this site is provided as a service and may change. Images are for illustration only. To the fullest extent permitted by law, our liability is limited to the amount you paid for the workshop. Nothing here limits rights that cannot be waived by law.</p>
+      <h3>9. Law and jurisdiction</h3>
+      <p>These terms are governed by the laws of the State of Israel, and the competent courts of Tel Aviv-Jaffa have exclusive jurisdiction.</p>
+      <h3>10. Changes and contact</h3>
+      <p>We may update these terms. The version in force on the day you booked applies. Questions: phone or WhatsApp <bdi dir="ltr">+972 50-408-8234</bdi>.</p>
+    </div>
+  </div>
+</dialog>
+
 
 <div class="mbar" id="mbar">
   <div class="when"><small data-i18n="ticketLabel">הסדנה הקרובה</small><b class="next-date">רביעי, 19:00</b></div>
@@ -539,6 +837,9 @@ footer .seo{font-size:.82rem;max-width:70ch}
     q5:'Can I book a private workshop or team event?',a5:'Yes. Send a message with the number of people and the date that suits you, and we’ll come back with an offer.',a5link:'Ask about a private workshop',
     q6:'How do I book?',a6:'Tap the WhatsApp button, send a message, get all the details and save your spot for the Wednesday that suits you.',
     dtH:'Pick your Wednesday',dtPicked:'Selected:',dtNote:'the WhatsApp button sends the date you picked',
+    skip:'Skip to main content',a11yH:'Accessibility menu',a11yText:'Text size',a11yContrast:'High contrast',a11yLinks:'Highlight links',a11yFont:'Readable font',a11yStill:'Stop animations',a11yReset:'Reset settings',
+    lgAccess:'Accessibility statement',lgPrivacy:'Privacy policy',lgTerms:'Terms & cancellation policy',
+    ageNote:'Wine is served to participants aged 18+ only. Booking is subject to <button type="button" class="inline-link" data-open="dlg-terms">the terms and cancellation policy</button>.',
     fH2:'The taboon is heating up',fP:'Wednesday, 7 pm, on the roof. All that’s left is to send a message.',
     foot:'© 5 boyz pizza · Rooftop pizza & taboon workshop, Tel Aviv',
     footSeo:'Pizza workshop Tel Aviv · Taboon workshop · Dough class · Neapolitan pizza class · Team building · Date night'
@@ -595,6 +896,8 @@ footer .seo{font-size:.82rem;max-width:70ch}
     });
     page.setAttribute('lang',lang); page.setAttribute('dir',lang==='en'?'ltr':'rtl');
     try{ document.documentElement.setAttribute('lang',lang); document.documentElement.setAttribute('dir',lang==='en'?'ltr':'rtl'); }catch(e){}
+    document.querySelectorAll('[data-lang]').forEach(function(b){ b.hidden = b.getAttribute('data-lang')!==lang; });
+    document.querySelectorAll('.legal-close').forEach(function(b){ b.setAttribute('aria-label', lang==='en'?'Close':'סגירה'); });
     current=lang; refresh(lang);
     var words=STRIP[lang], html=''; for(var r=0;r<2;r++) words.forEach(function(w){ html+='<span>'+w+'</span>'; });
     document.getElementById('strip-row').innerHTML=html;
@@ -608,6 +911,55 @@ footer .seo{font-size:.82rem;max-width:70ch}
   if(location.hash==='#en') start='en';
   apply(start);
   document.getElementById('lang-btn').addEventListener('click',function(){ apply(current==='he'?'en':'he'); });
+
+
+  // ---------- dialogs (legal pages) ----------
+  function openDlg(id){ var d=document.getElementById(id); if(!d) return; try{ d.showModal(); }catch(e){ d.setAttribute('open',''); } d.querySelector('.legal-inner').scrollTop=0; d.querySelector('.legal-close').focus(); }
+  document.addEventListener('click',function(e){
+    var o=e.target.closest('[data-open]'); if(o){ e.preventDefault(); openDlg(o.getAttribute('data-open')); return; }
+    var c=e.target.closest('[data-close]'); if(c){ c.closest('dialog').close(); return; }
+    if(e.target.tagName==='DIALOG') e.target.close();
+  });
+  var HASH={accessibility:'dlg-access',privacy:'dlg-privacy',terms:'dlg-terms'};
+  if(HASH[location.hash.slice(1)]) setTimeout(function(){ openDlg(HASH[location.hash.slice(1)]); },50);
+
+  // ---------- accessibility menu ----------
+  var root=document.documentElement, A={t:0,contrast:false,links:false,font:false,still:false};
+  try{ var sv=JSON.parse(localStorage.getItem('fbp-a11y')||'null'); if(sv) A=Object.assign(A,sv); }catch(e){}
+  var vid=document.getElementById('hero-vid'), vbtn=document.getElementById('vid-toggle');
+  var strip=document.getElementById('strip'), sbtn=document.getElementById('strip-toggle');
+  var PAUSE='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
+  var PLAY='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+  function setVid(play){ if(!vid) return; if(play){ var p=vid.play(); if(p&&p.catch) p.catch(function(){}); } else vid.pause();
+    vbtn.innerHTML=play?PAUSE:PLAY; vbtn.setAttribute('aria-label', play?(current==='en'?'Pause video':'השהיית הסרטון'):(current==='en'?'Play video':'הפעלת הסרטון')); }
+  function setStrip(run){ strip.classList.toggle('paused',!run); sbtn.innerHTML=run?PAUSE:PLAY; sbtn.setAttribute('aria-label', run?(current==='en'?'Pause moving text':'עצירת הטקסט הנע'):(current==='en'?'Play moving text':'הפעלת הטקסט הנע')); }
+  vbtn.addEventListener('click',function(){ setVid(vid.paused); });
+  sbtn.addEventListener('click',function(){ setStrip(strip.classList.contains('paused')); });
+  var reduce=false; try{ reduce=matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){}
+  function applyA11y(){
+    root.classList.remove('a11y-t1','a11y-t2','a11y-t3'); if(A.t>0) root.classList.add('a11y-t'+A.t);
+    ['contrast','links','font','still'].forEach(function(k){ root.classList.toggle('a11y-'+k,!!A[k]); var b=document.querySelector('[data-a11y="'+k+'"]'); if(b) b.setAttribute('aria-pressed',String(!!A[k])); });
+    if(A.still||reduce){ setVid(false); setStrip(false); } else { setVid(true); setStrip(true); }
+    try{ localStorage.setItem('fbp-a11y',JSON.stringify(A)); }catch(e){}
+  }
+  var abtn=document.getElementById('a11y-btn'), panel=document.getElementById('a11y-panel');
+  function togglePanel(open){ panel.hidden=!open; abtn.setAttribute('aria-expanded',String(open)); if(open) panel.querySelector('button').focus(); }
+  abtn.addEventListener('click',function(){ togglePanel(panel.hidden); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && !panel.hidden){ togglePanel(false); abtn.focus(); } });
+  document.addEventListener('click',function(e){ if(!panel.hidden && !panel.contains(e.target) && !abtn.contains(e.target)) togglePanel(false); });
+  panel.querySelectorAll('[data-a11y]').forEach(function(b){ b.addEventListener('click',function(){ var k=b.getAttribute('data-a11y'); A[k]=!A[k]; applyA11y(); }); });
+  document.getElementById('a11y-plus').addEventListener('click',function(){ A.t=Math.min(3,A.t+1); applyA11y(); });
+  document.getElementById('a11y-minus').addEventListener('click',function(){ A.t=Math.max(0,A.t-1); applyA11y(); });
+  document.getElementById('a11y-reset').addEventListener('click',function(){ A={t:0,contrast:false,links:false,font:false,still:false}; applyA11y(); });
+  applyA11y();
+
+  // arrow keys inside the date radiogroup
+  document.getElementById('dates').addEventListener('keydown',function(e){
+    var keys={ArrowRight:-1,ArrowLeft:1,ArrowDown:1,ArrowUp:-1}; if(!(e.key in keys)) return;
+    var step=keys[e.key]*(current==='en' && (e.key==='ArrowRight'||e.key==='ArrowLeft') ? -1 : 1);
+    e.preventDefault(); sel=(sel+step+DATES.length)%DATES.length; refresh(current);
+    var b=document.querySelector('.date[data-i="'+sel+'"]'); if(b) b.focus();
+  });
 
   // copy phone number
   var btn=document.getElementById('copy-btn');
