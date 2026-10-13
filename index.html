@@ -17,8 +17,7 @@
 <meta property="og:image" content="/img/margherita.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#16100c">
-<link rel="icon" href="img/logo.jpg">
-<!-- after connecting a domain: add <link rel="canonical" href="https://YOUR-DOMAIN/"> and make og:image an absolute URL -->
+<link rel="icon" href="/img/logo.jpg">
 </head>
 <body>
 <style>
@@ -165,6 +164,21 @@ section{padding-block:clamp(56px,8vw,112px)}
 .howto b{font-size:1.15rem}
 .howto span{color:var(--ash)}
 
+.dates-wrap{margin-bottom:clamp(24px,4vw,40px);display:grid;gap:14px}
+.dates-wrap h3{font-size:clamp(1.9rem,1.5rem + 1vw,2.4rem)}
+.dates{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;list-style:none;margin:0;padding:0}
+.date{font:inherit;color:var(--flour);background:var(--char);border:1.5px solid var(--char-2);border-radius:16px;padding:14px 10px;cursor:pointer;display:grid;gap:2px;justify-items:center;text-align:center;transition:border-color .15s,background .15s,transform .15s}
+.date:hover{border-color:var(--ash);transform:translateY(-1px)}
+.date .dw{font-weight:700;font-size:.8rem;letter-spacing:.06em;color:var(--ash)}
+.date .dd{font-family:var(--display);font-size:2.4rem;line-height:1}
+[lang="en"] .date .dd{font-family:"Oswald","Assistant",sans-serif;font-weight:600;font-size:2rem}
+.date .dm{font-size:.85rem;color:var(--ash)}
+.date .tag2{font-size:.72rem;font-weight:800;color:var(--basil);min-height:1.1em}
+.date[aria-checked="true"]{border-color:var(--ember);background:color-mix(in srgb,var(--ember) 16%,var(--char))}
+.date[aria-checked="true"] .dw,.date[aria-checked="true"] .dm{color:var(--flour)}
+.picked{color:var(--ash);font-size:.98rem}
+.picked b{color:var(--flour)}
+@media (max-width:980px){.dates{grid-template-columns:repeat(3,1fr)}}
 /* details */
 .details{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,56px);align-items:stretch}
 .facts{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--char-2);border-radius:24px;overflow:hidden;background:var(--char);margin:0}
@@ -274,7 +288,7 @@ footer .seo{font-size:.82rem;max-width:70ch}
       <p class="lead" data-i18n="heroLead">שלוש שעות על הגג: לומדים את תורת הבצק, מותחים בצק בידיים, אופים בטאבון לוהט ויושבים לאכול את הפיצה שהכנתם, עם כוס יין ונוף של העיר.</p>
       <div class="cta-row">
         <a class="btn btn-wa" data-wa href="https://wa.me/972504088234?text=%D7%94%D7%99%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A1%D7%93%D7%A0%D7%AA%20%D7%94%D7%A4%D7%99%D7%A6%D7%94%20%D7%95%D7%94%D7%98%D7%90%D7%91%D7%95%D7%9F%20%D7%91%D7%99%D7%95%D7%9D%20%D7%A8%D7%91%D7%99%D7%A2%D7%99%20%F0%9F%8D%95" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg><span data-i18n="ctaMain">שריינו מקום בוואטסאפ</span></a>
-        <a class="btn btn-ghost" href="#evening" data-i18n="ctaSecondary">מה קורה בערב?</a>
+        <a class="btn btn-ghost" href="#dates-section" data-i18n="ctaSecondary">לתאריכים הקרובים</a>
       </div>
       <ul class="chips">
         <li data-i18n="chip1">3 שעות</li>
@@ -388,9 +402,14 @@ footer .seo{font-size:.82rem;max-width:70ch}
       <p class="eyebrow" data-i18n="dEyebrow">פרטי הסדנה</p>
       <h2 id="details-h" data-i18n="dH2">כל מה שצריך לדעת</h2>
     </div>
+    <div class="dates-wrap" id="dates-section">
+      <h3 data-i18n="dtH">בחרו את הרביעי שלכם</h3>
+      <div class="dates" id="dates" role="radiogroup" aria-label="תאריכי הסדנה הקרובים"></div>
+      <p class="picked"><span data-i18n="dtPicked">נבחר:</span> <b id="picked-label"></b> · <span data-i18n="dtNote">לחיצה על כפתור הוואטסאפ שולחת את התאריך שבחרתם</span></p>
+    </div>
     <div class="howto" aria-label="איך נרשמים">
       <div><span class="k">1</span><b data-i18n="h1b">שולחים הודעה</b><span data-i18n="h1s">לחיצה על הכפתור פותחת וואטסאפ עם הודעה מוכנה.</span></div>
-      <div><span class="k">2</span><b data-i18n="h2b">בוחרים רביעי</b><span data-i18n="h2s">מקבלים מחיר, פרטים ותאריכים פנויים.</span></div>
+      <div><span class="k">2</span><b data-i18n="h2b">בוחרים רביעי</b><span data-i18n="h2s">בוחרים תאריך למעלה ומקבלים מחיר ופרטים.</span></div>
       <div><span class="k">3</span><b data-i18n="h3b">עולים לגג</b><span data-i18n="h3s">ב־19:00 הטאבון כבר חם והיין פתוח.</span></div>
     </div>
     <div class="details">
@@ -475,7 +494,7 @@ footer .seo{font-size:.82rem;max-width:70ch}
   var STRIP={he:['בצק','אש','יין','גג','חברים','טאבון','קראסט','תל אביב'],en:['Dough','Fire','Wine','Rooftop','Friends','Taboon','Crust','Tel Aviv']};
   var EN={
     nav1:'The evening',nav2:'Dough school',nav3:'Details',nav4:'FAQ',
-    ctaShort:'Book a spot',ctaMain:'Book on WhatsApp',ctaSecondary:'What happens?',
+    ctaShort:'Book a spot',ctaMain:'Book on WhatsApp',ctaSecondary:'Upcoming dates',
     heroEyebrow:'Every Wednesday · 7 pm · Tel Aviv',
     heroH1:'Pizza &amp; <span class="glow">taboon</span> workshop on a Tel Aviv rooftop',
     heroLead:'Three hours on the roof: learn the science of dough, stretch it by hand, bake in a blazing taboon, then sit down to eat the pizza you made, with a glass of wine and the city lights.',
@@ -505,7 +524,7 @@ footer .seo{font-size:.82rem;max-width:70ch}
     w4t:'Gift',w4h:'Birthdays',w4p:'An experience instead of another thing. Send us a message and we’ll help set it up.',
     dEyebrow:'Workshop details',dH2:'Everything you need to know',
     h1b:'Send a message',h1s:'The button opens WhatsApp with a ready-made message.',
-    h2b:'Pick a Wednesday',h2s:'Get the price, the details and open dates.',
+    h2b:'Pick a Wednesday',h2s:'Choose a date above and get the price and details.',
     h3b:'Come up to the roof',h3s:'At 7 pm the taboon is hot and the wine is open.',
     f1t:'When',f1d:'Every Wednesday',f2t:'Where',f2d:'A rooftop in Tel Aviv',f2s:'Exact address sent on WhatsApp',
     f3t:'Length',f3d:'3 hours',f3s:'From dough to the last bite',f4t:'Group',f4d:'Small and relaxed',f4s:'Limited spots each evening',
@@ -519,6 +538,7 @@ footer .seo{font-size:.82rem;max-width:70ch}
     q4:'Vegetarian options or allergies?',a4:'Tell us on WhatsApp before the workshop and we’ll check together what we can adjust.',
     q5:'Can I book a private workshop or team event?',a5:'Yes. Send a message with the number of people and the date that suits you, and we’ll come back with an offer.',a5link:'Ask about a private workshop',
     q6:'How do I book?',a6:'Tap the WhatsApp button, send a message, get all the details and save your spot for the Wednesday that suits you.',
+    dtH:'Pick your Wednesday',dtPicked:'Selected:',dtNote:'the WhatsApp button sends the date you picked',
     fH2:'The taboon is heating up',fP:'Wednesday, 7 pm, on the roof. All that’s left is to send a message.',
     foot:'© 5 boyz pizza · Rooftop pizza & taboon workshop, Tel Aviv',
     footSeo:'Pizza workshop Tel Aviv · Taboon workshop · Dough class · Neapolitan pizza class · Team building · Date night'
@@ -526,20 +546,48 @@ footer .seo{font-size:.82rem;max-width:70ch}
   var page=document.getElementById('page');
   var nodes=page.querySelectorAll('[data-i18n]');
   nodes.forEach(function(n){ n._he=n.innerHTML; });
-  var nextD=null, isToday=false;
+  var DATES=[], sel=0, isToday=false;
   try{
     var now=new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Jerusalem'}));
     var add=(3-now.getDay()+7)%7;
     if(add===0 && now.getHours()>=19) add=7;
-    isToday=add===0; nextD=new Date(now); nextD.setDate(now.getDate()+add);
+    isToday=add===0;
+    for(var i=0;i<6;i++){ var d=new Date(now); d.setHours(12,0,0,0); d.setDate(now.getDate()+add+7*i); DATES.push(d); }
   }catch(e){}
+  var MON={he:['ינו׳','פבר׳','מרץ','אפר׳','מאי','יוני','יולי','אוג׳','ספט׳','אוק׳','נוב׳','דצמ׳'],en:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']};
+  function dm(d){ return d.getDate()+'.'+(d.getMonth()+1); }
   function dateLabel(lang){
-    if(!nextD) return lang==='en'?'Wednesday, 7 pm':'רביעי, 19:00';
-    var dm=nextD.getDate()+'.'+(nextD.getMonth()+1);
-    if(lang==='en') return (isToday?'Tonight, ':'Wed '+dm+' · ')+'7 pm';
-    return (isToday?'היום, ':'רביעי, '+dm+' · ')+'19:00';
+    var d=DATES[sel]; if(!d) return lang==='en'?'Wednesday, 7 pm':'רביעי, 19:00';
+    var today=isToday&&sel===0;
+    if(lang==='en') return (today?'Tonight, ':'Wed '+dm(d)+' · ')+'7 pm';
+    return (today?'היום, ':'רביעי, '+dm(d)+' · ')+'19:00';
   }
-  function waLink(kind,lang){ return 'https://wa.me/'+PHONE+'?text='+encodeURIComponent(WA[lang][kind]); }
+  function waText(kind,lang){
+    if(kind==='private'||!DATES[sel]) return WA[lang][kind];
+    var d=dm(DATES[sel]);
+    return lang==='en' ? "Hi! I'd like to book a spot at the pizza & taboon workshop on Wednesday "+d+" 🍕 How many spots are left?"
+                       : 'היי! אשמח לשריין מקום בסדנת הפיצה והטאבון ביום רביעי '+d+' 🍕 כמה מקומות נשארו?';
+  }
+  function waLink(kind,lang){ return 'https://wa.me/'+PHONE+'?text='+encodeURIComponent(waText(kind,lang)); }
+  function renderDates(lang){
+    var box=document.getElementById('dates'); if(!box) return; var h='';
+    DATES.forEach(function(d,i){
+      var tag=i===0?(isToday?(lang==='en'?'Tonight':'הערב'):(lang==='en'?'Next up':'הקרוב')):'';
+      h+='<button type="button" class="date" role="radio" aria-checked="'+(i===sel)+'" data-i="'+i+'">'+
+         '<span class="dw">'+(lang==='en'?'WED':'רביעי')+'</span><span class="dd">'+d.getDate()+'</span>'+
+         '<span class="dm">'+MON[lang][d.getMonth()]+' · '+(lang==='en'?'7 pm':'19:00')+'</span><span class="tag2">'+tag+'</span></button>';
+    });
+    box.innerHTML=h;
+    box.querySelectorAll('.date').forEach(function(b){ b.addEventListener('click',function(){ sel=+b.getAttribute('data-i'); refresh(current); }); });
+    document.getElementById('picked-label').textContent=dateLabel(lang);
+  }
+  function refresh(lang){
+    document.querySelectorAll('[data-wa]').forEach(function(a){
+      a.href=waLink(a.getAttribute('data-wa')==='private'?'private':'main',lang); a.target='_blank'; a.rel='noopener';
+    });
+    document.querySelectorAll('.next-date').forEach(function(el){ el.textContent=dateLabel(lang); });
+    renderDates(lang);
+  }
   function apply(lang){
     nodes.forEach(function(n){
       var k=n.getAttribute('data-i18n');
@@ -547,10 +595,7 @@ footer .seo{font-size:.82rem;max-width:70ch}
     });
     page.setAttribute('lang',lang); page.setAttribute('dir',lang==='en'?'ltr':'rtl');
     try{ document.documentElement.setAttribute('lang',lang); document.documentElement.setAttribute('dir',lang==='en'?'ltr':'rtl'); }catch(e){}
-    document.querySelectorAll('[data-wa]').forEach(function(a){
-      a.href=waLink(a.getAttribute('data-wa')==='private'?'private':'main',lang); a.target='_blank'; a.rel='noopener';
-    });
-    document.querySelectorAll('.next-date').forEach(function(el){ el.textContent=dateLabel(lang); });
+    current=lang; refresh(lang);
     var words=STRIP[lang], html=''; for(var r=0;r<2;r++) words.forEach(function(w){ html+='<span>'+w+'</span>'; });
     document.getElementById('strip-row').innerHTML=html;
     document.getElementById('lang-label').textContent=lang==='en'?'עברית':'English';
